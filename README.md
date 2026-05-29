@@ -1,67 +1,42 @@
-# ScottsTechX-gobuster
+# \U0001F47B ScottsTechX Gobuster
 
-🔐 Pentesting Tool | Part of ScottsTechX Tool Suite
+<p align="center">
+  <img src="https://img.shields.io/badge/Gobuster-Directory-Buster-00ff88?style=for-the-badge&logo=linux&logoColor=black" alt="Gobuster"/>
+  <img src="https://img.shields.io/badge/Web-Security-00ff88?style=for-the-badge&logo=shield&logoColor=black" alt="Web Security"/>
+</p>
 
----
-
-## About
-
-**Directory/file buster - discover hidden paths, DNS subdomains, virtual hosts**
-
-Official ScottsTechX tool repo — part of the [ScottsTechX Tool Installer](https://github.com/fredscottsbulls/ScottsTechX-Tool-Installer) suite.
-
-**Official Website:** https://github.com/OJ/gobuster
+> **Directory/file discovery, DNS subdomains, and virtual host enumeration.**
 
 ---
 
-## Quick Install
+## \u26A1 What It Does
 
-### Via ScottsTechX Tool Installer:
+Gobuster discovers hidden paths, directories, files, subdomains, and virtual hosts on web servers \u2014 essential for web application reconnaissance.
+
+## \U0001F680 Quick Usage
 
 ```bash
-scotts-techx install gobuster
+# Directory busting
+gobuster dir -u http://target.com -w wordlist.txt
+
+# DNS subdomain enumeration
+gobuster dns -d target.com -w subdomains.txt
+
+# Virtual host discovery
+gobuster vhost -u http://target.com -w subdomains.txt
+
+# File extension scan
+gobuster dir -u http://target.com -w wordlist.txt -x php,html,js
 ```
 
-### Manual Install:
+## \U0001F6E1 Bug Bounty Workflow
 
 ```bash
-# Linux/macOS/Git Bash
-curl -fsSL https://raw.githubusercontent.com/fredscottsbulls/ScottsTechX-gobuster/main/install.sh | bash
-
-# Windows PowerShell
-irm https://raw.githubusercontent.com/fredscottsbulls/ScottsTechX-gobuster/main/install.ps1 | iex
+gobuster dir -u https://target.com -w /usr/share/wordlists/dirb/common.txt -t 50
+gobuster dns -d target.com -w /usr/share/wordlists/subdomains.txt
+gobuster vhost -u https://target.com -w /usr/share/wordlists/subdomains.txt
 ```
 
 ---
 
-## What is GOBUSTER?
-
-Directory/file buster - discover hidden paths, DNS subdomains, virtual hosts.
-
-For full documentation: https://github.com/OJ/gobuster
-
----
-
-## ScottsTechX Tool Suite (30 tools)
-
-| Category | Tools |
-|----------|-------|
-| Simple CLI | nmap, curl, wget, jq, git, python3, ffmpeg, traceroute, netcat, openssh |
-| Pentesting | hydra, sqlmap, nikto, hashcat, gobuster, searchsploit, masscan, burpsuite, ncat, Responder |
-| DevOps | docker, vim, htop, tmux, tar, make, openssl, ansible, kubectl, terraform |
-
-**[View Full Suite](https://github.com/fredscottsbulls/ScottsTechX-Tool-Installer)**
-
----
-
-## Disclaimer
-
-**For authorized use only.** Unauthorized access to computer systems is illegal.
-
----
-
-<div align="center">
-
-**ScottsTechX** | Fred Scotts | https://github.com/fredscottsbulls
-
-</div>
+MIT \u00a9 2026
